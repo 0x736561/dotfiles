@@ -1,0 +1,71 @@
+theme = "everforest_dark"
+
+[keys.normal]
+esc = ["collapse_selection", "keep_primary_selection"]
+
+[keys.normal.space.space]
+r = ":config-reload" 
+s = ":w"
+c = ":config-open"
+w = ":bc"
+Q = ":buffer-close-others"
+q = ":q"
+n = ":n"
+m = ":run-shell-command make"
+
+[keys.normal.space.space.t]
+g = ":theme gruvbox"
+d = ":theme dracula"
+o = ":theme onedark"
+c = ":theme catppuccin_mocha"
+e = ":theme everforest_dark"
+
+[editor]
+line-number = "absolute"
+mouse = true
+middle-click-paste = true
+scroll-lines = 1
+cursorline = true
+bufferline = "multiple"
+scrolloff = 8
+color-modes = true
+completion-trigger-len = 1
+
+[editor.cursor-shape]
+insert = "bar"
+normal = "block"
+select = "underline"
+
+[editor.file-picker]
+hidden = false
+
+[editor.statusline]
+separator = "│"
+left = ["mode", "spinner"]
+center = ["file-name"]
+right = ["file-type"]
+mode.normal = "NORMAL"
+mode.insert = "INSERT"
+mode.select = "SELECT"
+
+[editor.lsp]
+enable = true
+display-messages = true
+
+[editor.whitespace.render]
+space = "all"
+tab = "all"
+newline = "none"
+
+[editor.whitespace.characters]
+space = "·"
+tab = "→"
+newline = "⏎"
+
+[editor.indent-guides]
+render = true
+character = "▏" # Some characters that work well: "▏", "┆", "┊", "⸽"
+skip-levels = 1
+
+[editor.soft-wrap]
+enable = true

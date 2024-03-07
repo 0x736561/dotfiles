@@ -1,0 +1,79 @@
+#!/bin/env bash
+
+gruvbox() {
+	cat .config/sway/config | sed "s/temas\/\S*/temas\/gruvbox/g" > ~/.config/sway/.tmp
+	cat .config/rofi/config.rasi | sed "s/themes\/\S*/themes\/gruvbox\"/g" > ~/.config/rofi/.tmp
+	cat .config/helix/config.toml | sed "s/theme\s*=\s\"\S*/theme = \"gruvbox\"/g" > ~/.config/helix/.tmp
+
+	cp ~/.config/sway/.tmp ~/.config/sway/config
+	cp ~/.config/rofi/.tmp ~/.config/rofi/config.rasi
+	cp ~/.config/helix/.tmp ~/.config/helix/config.toml
+	cp ~/.config/foot/gruvbox.ini ~/.config/foot/foot.ini
+	cp ~/.config/sway/wallpapers/gruvbox.png ~/.config/sway/wp
+
+	rm ~/.config/sway/.tmp
+	rm ~/.config/rofi/.tmp
+	rm ~/.config/helix/.tmp
+	swaymsg reload
+}
+
+dracula() {
+	cat .config/sway/config | sed "s/temas\/\S*/temas\/dracula/g" > ~/.config/sway/.tmp
+	cat .config/rofi/config.rasi | sed "s/themes\/\S*/themes\/dracula\"/g" > ~/.config/rofi/.tmp
+	cat .config/helix/config.toml | sed "s/theme\s*=\s\"\S*/theme = \"dracula\"/g" > ~/.config/helix/.tmp
+	
+	cp ~/.config/sway/.tmp ~/.config/sway/config
+	cp ~/.config/rofi/.tmp ~/.config/rofi/config.rasi
+	cp ~/.config/helix/.tmp ~/.config/helix/config.toml
+	cp ~/.config/foot/dracula.ini ~/.config/foot/foot.ini
+	cp ~/.config/sway/wallpapers/dracula.png ~/.config/sway/wp
+	
+	rm ~/.config/sway/.tmp
+	rm ~/.config/rofi/.tmp
+	rm ~/.config/helix/.tmp
+	swaymsg reload
+}
+
+nord() {
+	cat .config/sway/config | sed "s/temas\/\S*/temas\/nord/g" > ~/.config/sway/.tmp
+	cat .config/rofi/config.rasi | sed "s/themes\/\S*/themes\/nord\"/g" > ~/.config/rofi/.tmp
+	cat .config/helix/config.toml | sed "s/theme\s*=\s\"\S*/theme = \"nord\"/g" > ~/.config/helix/.tmp
+
+	cp ~/.config/sway/.tmp ~/.config/sway/config
+	cp ~/.config/rofi/.tmp ~/.config/rofi/config.rasi
+	cp ~/.config/helix/.tmp ~/.config/helix/config.toml
+	cp ~/.config/foot/nord.ini ~/.config/foot/foot.ini
+	cp ~/.config/sway/wallpapers/nord.png ~/.config/sway/wp
+	
+	rm ~/.config/sway/.tmp
+	rm ~/.config/rofi/.tmp
+	rm ~/.config/helix/.tmp
+	swaymsg reload
+}
+
+everforest() {
+	cat .config/sway/config | sed "s/temas\/\S*/temas\/everforest/g" > ~/.config/sway/.tmp
+	cat .config/rofi/config.rasi | sed "s/themes\/\S*/themes\/everforest\"/g" > ~/.config/rofi/.tmp
+	cat .config/helix/config.toml | sed "s/theme\s*=\s\"\S*/theme = \"everforest_dark\"/g" > ~/.config/helix/.tmp
+
+	cp ~/.config/sway/.tmp ~/.config/sway/config
+	cp ~/.config/rofi/.tmp ~/.config/rofi/config.rasi
+	cp ~/.config/helix/.tmp ~/.config/helix/config.toml
+	cp ~/.config/foot/everforest.ini ~/.config/foot/foot.ini
+	cp ~/.config/sway/wallpapers/everforest.png ~/.config/sway/wp
+
+	rm ~/.config/sway/.tmp
+	rm ~/.config/rofi/.tmp
+	rm ~/.config/helix/.tmp
+	swaymsg reload
+}
+
+ESCOLHA=$(printf "Gruvbox\nEverforest\nDracula\nNord" | rofi -dmenu -i -p "Escolha o tema:")
+
+case "$ESCOLHA" in
+	Gruvbox) gruvbox;;
+	Everforest) everforest;;
+	Dracula) dracula;;
+	Nord) nord;;
+	*) exit;;
+esac

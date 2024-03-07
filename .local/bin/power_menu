@@ -1,0 +1,10 @@
+#!/bin/env bash
+
+ESCOLHA="$(printf "Sair\nReiniciar\nDesligar" | rofi -dmenu -i -p "Escolha uma opção:")"
+
+case "$ESCOLHA" in
+	Sair) pkill -KILL -u $USER;;
+  Reiniciar) systemctl reboot;;
+  Desligar) systemctl poweroff;;
+	*) exit;;
+esac

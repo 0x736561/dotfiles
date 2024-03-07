@@ -1,0 +1,20 @@
+* {
+    bg-col:  #3d484d;
+    bg-col-transparent:  #3d484ddd;
+    bg-col-element:  #3d484ddf;
+    bg-col-light: #a7c080;
+    border-col: #a7c080;
+    selected-col: #a7c080;
+    tab: #a7c080;
+    tab-selected: #3d484d;
+    fg-col: #a7c080;
+    fg-col2: #2d353b;
+    blank: #3d484d;
+    blank-underline: #343f44;
+    button: #a7c080;
+    button-underline: #425047;
+    window: #2d353b;
+    window-underline: #232a2e;
+
+    width: 600;
+}

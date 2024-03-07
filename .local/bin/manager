@@ -1,0 +1,15 @@
+#!/bin/bash
+
+open_fs () {
+	item=$(ls -a | rofi -dmenu -i -p "File Browser:")
+
+	if [[ -d $item ]];
+	then
+		cd "$item"
+		open_fs
+	else	
+		xdg-open $item
+	fi
+}
+
+open_fs

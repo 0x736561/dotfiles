@@ -1,0 +1,7 @@
+#!/bin/env bash
+
+ESCOLHA="$(printf "Sim\nNão" | rofi -dmenu -i -p "Você realmente quer sair do Sway?")"
+case "$ESCOLHA" in
+	Sim) swaymsg exit;;
+	*) exit;;
+esac
