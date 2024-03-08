@@ -9,11 +9,16 @@ gruvbox() {
 	cp ~/.config/rofi/.tmp ~/.config/rofi/config.rasi
 	cp ~/.config/helix/.tmp ~/.config/helix/config.toml
 	cp ~/.config/foot/gruvbox.ini ~/.config/foot/foot.ini
+	cp ~/.config/mako/gruvbox ~/.config/mako/config
 	cp ~/.config/sway/wallpapers/gruvbox.png ~/.config/sway/wp
 
 	rm ~/.config/sway/.tmp
 	rm ~/.config/rofi/.tmp
 	rm ~/.config/helix/.tmp
+
+	pkill mako
+	mako &
+
 	swaymsg reload
 }
 
@@ -26,11 +31,16 @@ dracula() {
 	cp ~/.config/rofi/.tmp ~/.config/rofi/config.rasi
 	cp ~/.config/helix/.tmp ~/.config/helix/config.toml
 	cp ~/.config/foot/dracula.ini ~/.config/foot/foot.ini
+	cp ~/.config/mako/dracula ~/.config/mako/config
 	cp ~/.config/sway/wallpapers/dracula.png ~/.config/sway/wp
 	
 	rm ~/.config/sway/.tmp
 	rm ~/.config/rofi/.tmp
 	rm ~/.config/helix/.tmp
+
+	pkill mako
+	mako &
+
 	swaymsg reload
 }
 
@@ -43,11 +53,16 @@ nord() {
 	cp ~/.config/rofi/.tmp ~/.config/rofi/config.rasi
 	cp ~/.config/helix/.tmp ~/.config/helix/config.toml
 	cp ~/.config/foot/nord.ini ~/.config/foot/foot.ini
+	cp ~/.config/mako/nord ~/.config/mako/config
 	cp ~/.config/sway/wallpapers/nord.png ~/.config/sway/wp
 	
 	rm ~/.config/sway/.tmp
 	rm ~/.config/rofi/.tmp
 	rm ~/.config/helix/.tmp
+
+	pkill mako
+	mako &
+
 	swaymsg reload
 }
 
@@ -60,11 +75,16 @@ everforest() {
 	cp ~/.config/rofi/.tmp ~/.config/rofi/config.rasi
 	cp ~/.config/helix/.tmp ~/.config/helix/config.toml
 	cp ~/.config/foot/everforest.ini ~/.config/foot/foot.ini
+	cp ~/.config/mako/everforest ~/.config/mako/config
 	cp ~/.config/sway/wallpapers/everforest.png ~/.config/sway/wp
 
 	rm ~/.config/sway/.tmp
 	rm ~/.config/rofi/.tmp
 	rm ~/.config/helix/.tmp
+
+	pkill mako
+	mako &
+
 	swaymsg reload
 }
 

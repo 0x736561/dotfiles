@@ -17,6 +17,7 @@ exec_always {
 exec {
     wlsunset -t 3500 -s 18:00 -S 5:30
     export MOZ_ENABLE_WAYLAND=1
+    mako
 }
 
 ### Configuração da paleta de cores ###
@@ -92,27 +93,20 @@ set $nag nag
     # Desligar tela do notebook
     bindsym $mod+o output "eDP-1" toggle
 
-    # Menu de energia
-    bindsym $mod+delete exec power_menu
-
     # Fechar janela
     bindsym $mod+q kill
 
     # Reiniciar sway
     bindsym $mod+r reload
 
-    # Abrir terminal
-    bindsym $mod+Return exec $term
+    # Sair do sway
+    bindsym Ctrl+Alt+q exec $nag 'Você realmente quer sair do sway?' -B 'Sim.' 'swaymsg exit' 
 
-    # Abrir navegador
-    bindsym $mod+w exec $web
-
-    # menu
-    bindsym $mod+p exec rofi -show run
-    bindsym $mod+d exec rofi -show drun -show-icons
-
-    # Abrir gerenciador de arquivos
-    bindsym $mod+e exec $files
+    # Controlar reprodução de mídia
+    bindcode 172 exec playerctl play-pause
+    bindcode 174 exec playerctl stop
+    bindcode 173 exec playerctl previous
+    bindcode 171 exec playerctl next
 
     # Volume e brilho
     bindsym XF86AudioRaiseVolume exec amixer set Master 5%+
@@ -121,10 +115,38 @@ set $nag nag
     bindsym XF86MonBrightnessUp exec brightnessctl s 3%+
     bindsym XF86MonBrightnessDown exec brightnessctl s 3%-
     
-    # Mumble
-    bindsym XF86AudioMicMute exec mumble rpc togglemute
+    # Menu
+    bindsym $mod+p exec rofi -show run
+    bindsym $mod+d exec rofi -show drun -show-icons
 
-    # Abrir mixer
+    # Menu de energia
+    bindsym $mod+delete exec power_menu
+
+    # Explorador de arquivos
+    bindsym $mod+e exec $files
+
+    # Explorador de senhas
+    bindsym $mod+s exec pass_menu
+
+    # Gerenciador de afazeres
+    bindsym $mod+g exec todo
+
+    # Seletor de emoji
+    bindsym $mod+semicolon exec rofi -show emoji
+
+    # Menu wifi
+    bindsym $mod+y exec wifi_menu
+
+    # Trocar de tema
+    bindsym $mod+t exec tema
+
+    # Abrir terminal
+    bindsym $mod+Return exec $term
+
+    # Abrir navegador
+    bindsym $mod+w exec $web
+
+    # Abrir pavucontrol
     bindsym $mod+a exec pavucontrol
 
     # Screenshot
@@ -142,18 +164,6 @@ set $nag nag
 
     # Neomutt
     bindsym $mod+m exec foot neomutt
-
-    # Controlar reprodução de mídia
-    bindcode 172 exec playerctl play-pause
-    bindcode 174 exec playerctl stop
-    bindcode 173 exec playerctl previous
-    bindcode 171 exec playerctl next
-
-    # Trocar de tema
-    bindsym $mod+t exec tema
-
-    # Sair do sway
-    bindsym Ctrl+Alt+q exec $nag 'Você realmente quer sair do sway?' -B 'Sim.' 'swaymsg exit' 
 
 ### Movimentação
     
