@@ -1,4 +1,4 @@
-include ~/.config/sway/temas/dracula
+include ~/.config/sway/temas/nord
 
 ### Configurações gerais ###
 font pango:JetBrainsMono 8
@@ -138,10 +138,6 @@ set $nag nag
     # Menu wifi
     bindsym $mod+y exec wifi_menu
 
-    # rofi-mpd
-    bindsym $mod+c exec rofi-mpd -a
-
-
     # Trocar de tema
     bindsym $mod+t exec tema
 
@@ -160,6 +156,9 @@ set $nag nag
 
     # Gravar tela
     bindsym Ctrl+Print exec foot wf-recorder -a -x yuv420p -c libx264 -f  rec.mp4
+
+    # rofi-mpd
+    bindsym $mod+c exec rofi-mpd -a
 
     # cava
     bindsym $mod+alt+c exec foot cava
