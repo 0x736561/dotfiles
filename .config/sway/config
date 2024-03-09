@@ -161,7 +161,7 @@ set $nag nag
     bindsym $mod+c exec rofi-mpd -a
 
     # cava
-    bindsym $mod+alt+c exec foot cava
+    bindsym $mod+v exec foot cava
 
     # Newsboat
     bindsym $mod+n exec foot newsboat
