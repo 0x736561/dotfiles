@@ -1,4 +1,4 @@
-include ~/.config/sway/temas/nord
+include ~/.config/sway/temas/gruvbox
 
 ### Configurações gerais ###
 font pango:JetBrainsMono 8
@@ -146,6 +146,9 @@ set $nag nag
 
     # Abrir navegador
     bindsym $mod+w exec $web
+
+    # Abrir navegador (janela anônima)
+    bindsym $mod+alt+w exec $web --target private-window
 
     # Abrir pavucontrol
     bindsym $mod+a exec pavucontrol
