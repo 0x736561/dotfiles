@@ -65,8 +65,6 @@ set $mod Mod4
 set $term foot
 set $web qutebrowser
 set $files manager
-set $nag nag
-
 
 ### Touchpad
 
@@ -99,9 +97,6 @@ set $nag nag
 
     # Reiniciar sway
     bindsym $mod+r reload
-
-    # Sair do sway
-    bindsym Ctrl+Alt+q exec $nag
 
     # Controlar reprodução de mídia
     bindcode 172 exec mpc play
