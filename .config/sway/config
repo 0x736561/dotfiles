@@ -101,7 +101,7 @@ set $nag nag
     bindsym $mod+r reload
 
     # Sair do sway
-    bindsym Ctrl+Alt+q exec $nag 'Você realmente quer sair do sway?' -B 'Sim.' 'swaymsg exit' 
+    bindsym Ctrl+Alt+q exec $nag
 
     # Controlar reprodução de mídia
     bindcode 172 exec mpc play
