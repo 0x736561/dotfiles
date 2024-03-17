@@ -1,0 +1,34 @@
+#!/bin/env bash
+
+sair(){
+	if [ $(~/.config/sway/scripts/nag) ]; then 
+		swaymsg exit 
+	fi
+}
+
+suspender(){
+	if [ $(~/.config/sway/scripts/nag) ]; then
+		systemctl suspend
+	fi
+}
+
+reiniciar(){
+	if [ $(~/.config/sway/scripts/nag) ]; then
+		systemctl reboot
+	fi
+}
+
+desligar(){
+	if [ $(~/.config/sway/scripts/nag) ]; then
+		systemctl poweroff
+	fi
+}
+ESCOLHA="$(printf "Sair\nSuspender\nReiniciar\nDesligar" | rofi -config ~/.config/sway/etc/rofi/config.rasi -dmenu -i -p "Escolha uma opção:")"
+
+case "$ESCOLHA" in
+	Sair) sair;;
+	Suspender) suspender;;
+  Reiniciar) reiniciar;;
+  Desligar) desligar;;
+	*) exit;;
+esac

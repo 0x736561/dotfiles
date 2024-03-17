@@ -1,8 +1,0 @@
-#!/bin/env bash
-
-CONFIRMACAO="$(printf "Sim\nNão" | rofi -dmenu -i -p "Você tem certeza?")"
-case "$CONFIRMACAO" in
-	Sim) echo 0;;
-	*) exit;;
-esac
-

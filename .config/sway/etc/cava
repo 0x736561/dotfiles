@@ -1,0 +1,24 @@
+[general]
+framerate = 90
+autosens = 1
+sensitivity = 100
+bars = 0
+bar_width = 10
+bar_spacing = 2
+
+[input]
+method = pipewire
+source = auto
+sample_rate = 44100
+sample_bits = 16
+channels = 2
+
+[output]
+method = sdl
+channels = mono
+mono_option = average
+
+[color]
+background = '#282828'
+foreground = '#98971a'
+

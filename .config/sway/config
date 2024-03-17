@@ -15,6 +15,10 @@ exec_always {
 }
 
 exec {
+    gsettings set org.gnome.desktop.interface gtk-theme Gruvbox-Material-Dark
+    gsettings set org.gnome.desktop.interface icon-theme Gruvbox-Material-Dark
+    gsettings set org.gnome.desktop.interface font-name "JetBrains Mono"
+    gsettings set org.gnome.desktop.interface cursor-theme macOS-Monterey
     wlsunset -t 3500 -s 18:00 -S 5:30
     export MOZ_ENABLE_WAYLAND=1
     mako
@@ -62,9 +66,10 @@ workspace 10 output   $display2 $display1
 ### Teclas de atalho ###
 
 set $mod Mod4
-set $term foot
+set $term foot -c ~/.config/sway/etc/foot.ini
 set $web qutebrowser
-set $files manager
+set $files $term lf -config ~/.config/sway/etc/lf/lfrc
+set $scripts ~/.config/sway/scripts
 
 ### Touchpad
 
@@ -112,41 +117,44 @@ set $files manager
     bindsym XF86MonBrightnessDown exec brightnessctl s 3%-
     
     # Menu
-    bindsym $mod+p exec rofi -show run
-    bindsym $mod+d exec rofi -show drun -show-icons
+    bindsym $mod+p exec rofi -config ~/.config/sway/etc/rofi/config.rasi -show run
+    bindsym $mod+d exec rofi -config ~/.config/sway/etc/rofi/config.rasi -show drun -show-icons
 
-    # Menu de energia
-    bindsym $mod+delete exec power_menu
+    # Seletor de emoji
+    bindsym $mod+semicolon exec rofi -config ~/.config/sway/etc/rofi/config.rasi -show emoji
 
     # Explorador de arquivos
     bindsym $mod+e exec $files
 
+    # Menu de energia
+    bindsym $mod+delete exec $scripts/power_menu
+
     # Explorador de senhas
-    bindsym $mod+s exec pass_menu
+    bindsym $mod+s exec $scripts/pass_menu
 
     # Gerenciador de afazeres
-    bindsym $mod+g exec todo
-
-    # Seletor de emoji
-    bindsym $mod+semicolon exec rofi -show emoji
+    bindsym $mod+g exec $scripts/todo
 
     # Menu wifi
-    bindsym $mod+y exec wifi_menu
+    bindsym $mod+y exec $scripts/wifi_menu
 
-    # Trocar de tema
-    bindsym $mod+t exec tema
+    # Trocar de wallpaper
+    bindsym $mod+i exec $scripts/walls
+
+    # rofi-mpd
+    bindsym $mod+c exec $scripts/rofi-mpd -a
 
     # Abrir terminal
     bindsym $mod+Return exec $term
 
     # Abrir navegador
-    bindsym $mod+w exec $web
+    bindsym $mod+w exec qutebrowser
 
     # Abrir navegador (janela anônima)
-    bindsym $mod+alt+w exec $web --target private-window
+    bindsym $mod+alt+w exec qutebrowser --target private-window
 
-    # Abrir pavucontrol
-    bindsym $mod+a exec pavucontrol
+    # Abrir mixer
+    bindsym $mod+a exec foot pulsemixer
 
     # Screenshot
     bindsym Print exec grim
@@ -155,11 +163,8 @@ set $files manager
     # Gravar tela
     bindsym Ctrl+Print exec foot wf-recorder -a -x yuv420p -c libx264 -f  rec.mp4
 
-    # rofi-mpd
-    bindsym $mod+c exec rofi-mpd -a
-
     # cava
-    bindsym $mod+v exec foot cava
+    bindsym $mod+v exec cava -p ~/.config/sway/etc/cava
 
     # Newsboat
     bindsym $mod+n exec foot newsboat
