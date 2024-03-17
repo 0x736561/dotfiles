@@ -58,3 +58,6 @@ Aqui está a estrutura dos arquivos:
 ```
 
 Os wallpapers foram baixados [daqui](https://gruvbox-wallpapers.pages.dev/).
+
+## Preview  
+![preview](./preview.png)
