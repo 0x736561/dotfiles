@@ -3,6 +3,7 @@ set shellopts '-eu'
 set ifs "\n"
 set scrolloff 8
 set cursorpreviewfmt "\033[7;2m"
+set icons true
 set sixel true
 set previewer ~/.config/sway/scripts/previewer
 set hidden true
