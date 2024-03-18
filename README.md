@@ -1,4 +1,10 @@
-# dotfiles
+# dotfiles 
+
+[![Maintenance](https://img.shields.io/maintenance/yes/2024.svg)]() 
+![GitHub commit activity](https://img.shields.io/github/commit-activity/t/0x736561/dotfiles) 
+![GitHub language count](https://img.shields.io/github/languages/count/0x736561/dotfiles)
+![GitHub top language](https://img.shields.io/github/languages/top/0x736561/dotfiles)
+![GitHub repo size](https://img.shields.io/github/repo-size/0x736561/dotfiles)
 
 Minhas dotfiles, contendo um setup para o Sway, configurações do editor de texto [Helix](https://helix-editor.com), 
 configurações do emulador de terminal [Foot](https://codeberg.org/dnkl/foot), e uma versão customizada das 
