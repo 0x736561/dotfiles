@@ -1,17 +1,18 @@
-include ~/.config/sway/temas/gruvbox
-
 ### Configurações gerais ###
+
 font pango:JetBrainsMono 8
 default_floating_border none
+default_border pixel 2
 smart_borders on
 smart_gaps on
 gaps inner 10
+xwayland disable
 
 ### Inicialização ###
+
 exec_always {
     swaymsg seat seat0 hide_cursor 5000
     swaymsg seat seat0 hide_cursor when-typing enable
-    swaymsg default_border pixel 2
 }
 
 exec {
@@ -19,6 +20,7 @@ exec {
     gsettings set org.gnome.desktop.interface icon-theme Gruvbox-Material-Dark
     gsettings set org.gnome.desktop.interface font-name "JetBrains Mono"
     gsettings set org.gnome.desktop.interface cursor-theme macOS-Monterey
+    swayidle -C ~/.config/sway/idle
     wlsunset -t 3500 -s 18:00 -S 5:30
     export MOZ_ENABLE_WAYLAND=1
     mako
@@ -26,9 +28,14 @@ exec {
 }
 
 ### Configuração da paleta de cores ###
-client.focused           $1  $1  $0  $1  $1
-client.focused_inactive  $0  $0  $2  $0  $0
-client.unfocused         $0  $0  $2  $0  $0
+
+    set $0 #282828
+    set $1 #98971a
+    set $2 #ebdbb2
+
+    client.focused           $1  $1  $0  $1  $1
+    client.focused_inactive  $0  $0  $2  $0  $0
+    client.unfocused         $0  $0  $2  $0  $0
 
 bar {
     position top
@@ -42,36 +49,20 @@ bar {
 }
 
 ### Wallpaper ###
-output * background ~/.config/sway/wp fill 
+
+    output * background ~/.config/sway/wp fill 
 
 ### Output ###
+### swaymsg -t get_outputs ###
 
-set $display1 "eDP-1"
-set $display2 "HDMI-A-1"
+    set $display1 "eDP-1"
+    set $display2 "HDMI-A-1"
 
-workspace 1 output    $display1
-workspace 2 output    $display1
-workspace 3 output    $display1
-workspace 4 output    $display1
-workspace 5 output    $display1
-workspace 6 output    $display2 $display1
-workspace 7 output    $display2 $display1
-workspace 8 output    $display2 $display1
-workspace 9 output    $display2 $display1
-workspace 10 output   $display2 $display1
+### Teclado ###
 
-# output HDMI-A-1 resolution 1920x1080 position 1920,0
-# You can get the names of your outputs by running: swaymsg -t get_outputs
+    input 1:1:AT_Translated_Set_2_keyboard xkb_layout "br" 
 
-### Teclas de atalho ###
-
-set $mod Mod4
-set $term foot -c ~/.config/sway/etc/foot.ini
-set $web qutebrowser
-set $files $term lf -config ~/.config/sway/etc/lf/lfrc
-set $scripts ~/.config/sway/scripts
-
-### Touchpad
+### Touchpad ###
 
     input "1267:12734:MSFT0001:01_04F3:31BE_Touchpad" {
            dwt enabled
@@ -80,7 +71,7 @@ set $scripts ~/.config/sway/scripts
            middle_emulation disabled
     }
 
-### Gestos
+### Gestos ###
 
     bindgesture swipe:left workspace prev
     bindgesture swipe:right workspace next
@@ -89,11 +80,19 @@ set $scripts ~/.config/sway/scripts
     bindgesture pinch:inward+left move left
     bindgesture pinch:inward+right move right
 
-### Teclado
-    input 1:1:AT_Translated_Set_2_keyboard xkb_layout "br" 
+### Switch ###
 
-### Teclas de atalho
-    
+set $lock swaylock -e -i ~/.config/sway/wp
+
+    bindswitch lid:on exec $lock
+
+### Teclas de atalho ###
+
+    set $mod Mod4
+    set $term foot
+    set $web qutebrowser
+    set $files $term lf
+
     # Desligar tela do notebook
     bindsym $mod+o output "eDP-1" toggle
 
@@ -117,32 +116,32 @@ set $scripts ~/.config/sway/scripts
     bindsym XF86MonBrightnessDown exec brightnessctl s 3%-
     
     # Menu
-    bindsym $mod+p exec rofi -config ~/.config/sway/etc/rofi/config.rasi -show run
-    bindsym $mod+d exec rofi -config ~/.config/sway/etc/rofi/config.rasi -show drun -show-icons
+    bindsym $mod+p exec rofi -show run
+    bindsym $mod+d exec rofi -show drun -show-icons
 
     # Seletor de emoji
-    bindsym $mod+semicolon exec rofi -config ~/.config/sway/etc/rofi/config.rasi -show emoji
+    bindsym $mod+semicolon exec rofi -show emoji
 
     # Explorador de arquivos
     bindsym $mod+e exec $files
 
     # Menu de energia
-    bindsym $mod+delete exec $scripts/power_menu
+    bindsym $mod+delete exec power_menu
 
     # Explorador de senhas
-    bindsym $mod+s exec $scripts/pass_menu
+    bindsym $mod+s exec pass_menu
 
     # Gerenciador de afazeres
-    bindsym $mod+g exec $scripts/todo
+    bindsym $mod+g exec todo
 
     # Menu wifi
-    bindsym $mod+y exec $scripts/wifi_menu
+    bindsym $mod+y exec wifi_menu
 
     # Trocar de wallpaper
-    bindsym $mod+i exec $scripts/walls
+    bindsym $mod+i exec walls
 
     # rofi-mpd
-    bindsym $mod+c exec $scripts/rofi-mpd -a
+    bindsym $mod+c exec rofi-mpd -a
 
     # Abrir terminal
     bindsym $mod+Return exec $term
@@ -164,7 +163,7 @@ set $scripts ~/.config/sway/scripts
     bindsym Ctrl+Print exec foot wf-recorder -a -x yuv420p -c libx264 -f  rec.mp4
 
     # cava
-    bindsym $mod+v exec cava -p ~/.config/sway/etc/cava
+    bindsym $mod+v exec cava
 
     # Newsboat
     bindsym $mod+n exec foot newsboat
@@ -172,9 +171,8 @@ set $scripts ~/.config/sway/scripts
     # Neomutt
     bindsym $mod+m exec foot neomutt
 
-### Movimentação
-    
-    # teclas Vim-like
+### Movimentação ###
+
     set $left   h
     set $down   j
     set $up     k
@@ -201,7 +199,17 @@ set $scripts ~/.config/sway/scripts
     bindsym $mod+Alt+$up    move up
     bindsym $mod+Alt+$right move right
 
-### Workspaces:
+### Workspaces ###
+    workspace 1 output    $display1
+    workspace 2 output    $display1
+    workspace 3 output    $display1
+    workspace 4 output    $display1
+    workspace 5 output    $display1
+    workspace 6 output    $display2 $display1
+    workspace 7 output    $display2 $display1
+    workspace 8 output    $display2 $display1
+    workspace 9 output    $display2 $display1
+    workspace 10 output   $display2 $display1
 
     # Switch to workspace
     bindsym $mod+1 workspace number 1
@@ -215,6 +223,11 @@ set $scripts ~/.config/sway/scripts
     bindsym $mod+9 workspace number 9
     bindsym $mod+0 workspace number 10
 
+    bindsym $mod+shift+$right workspace next
+    bindsym $mod+shift+$left workspace prev
+    bindsym $mod+shift+$up workspace next
+    bindsym $mod+shift+$down workspace prev
+
     # Move focused container to workspace
     bindsym $mod+Alt+1 move container to workspace number 1
     bindsym $mod+Alt+2 move container to workspace number 2
@@ -227,7 +240,7 @@ set $scripts ~/.config/sway/scripts
     bindsym $mod+Alt+9 move container to workspace number 9
     bindsym $mod+Alt+0 move container to workspace number 10
 
-### Layout stuff:
+### Layout ###
 
     bindsym $mod+x layout tabbed 
     bindsym $mod+z layout toggle split
@@ -237,7 +250,7 @@ set $scripts ~/.config/sway/scripts
     bindsym $mod+Tab floating toggle
     bindsym Alt+Tab focus mode_toggle
 
-### Scratchpad:
+### Scratchpad ###
 
     bindsym $mod+Alt+minus move scratchpad
     bindsym $mod+minus scratchpad show

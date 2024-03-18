@@ -1,0 +1,2 @@
+timeout 300 'swaylock -e -i ~/.config/sway/wp'
+before-sleep 'swaylock -e -i ~/.config/sway/wp'

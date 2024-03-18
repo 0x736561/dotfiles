@@ -1,7 +1,7 @@
 #!/usr/bin/env sh
 
-m() { rofi -config ~/.config/sway/etc/rofi/config.rasi -dmenu -i "$@" ;}
-mb() { rofi -config ~/.config/sway/etc/rofi/config.rasi -dmenu -i -kb-custom-1 "Alt+q" "$@" ;}
+m() { rofi -dmenu -i "$@" ;}
+mb() { rofi -dmenu -i -kb-custom-1 "Alt+q" "$@" ;}
 
 artist() {
   lines="$(mpc list artist | wc -l)"

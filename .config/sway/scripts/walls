@@ -1,4 +1,0 @@
-#!/usr/bin/env bash
-ESCOLHA=$(ls ~/.config/sway/wallpapers/ | rofi -config ~/.config/sway/etc/rofi/config.rasi -dmenu -i -p "Escolha o wallpaper")
-cp ~/.config/sway/wallpapers/$ESCOLHA ~/.config/sway/wp
-swaymsg reload &

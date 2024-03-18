@@ -24,7 +24,7 @@ while [ "$DONE" -eq 0 ] ; do
   if [ "$LEVEL" -ne 0 ] ; then
     password_files=(".." "${password_files[@]}") 
   fi
-  entry=$(printf '%s\n' "${password_files[@]}" | rofi -config ~/.config/sway/etc/rofi/config.rasi -dmenu "$@" -i -p "Escolha a senha")
+  entry=$(printf '%s\n' "${password_files[@]}" | rofi -dmenu "$@" -i -p "Escolha a senha")
   
   echo "entry: $entry"
   if [ -z "$entry" ] ; then
