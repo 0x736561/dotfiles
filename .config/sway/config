@@ -6,7 +6,7 @@ default_border pixel 2
 smart_borders on
 smart_gaps on
 gaps inner 10
-xwayland disable
+xwayland enable
 
 ### Inicialização ###
 
@@ -193,13 +193,14 @@ set $lock swaylock -e -i ~/.config/sway/wp
     bindsym $mod+Ctrl+$left  resize shrink width
     bindsym $mod+Ctrl+$up    resize shrink height
 
-    # Movimentar janelas 
+    # Movimentar janelas
     bindsym $mod+Alt+$left  move left
     bindsym $mod+Alt+$down  move down
     bindsym $mod+Alt+$up    move up
     bindsym $mod+Alt+$right move right
 
 ### Workspaces ###
+
     workspace 1 output    $display1
     workspace 2 output    $display1
     workspace 3 output    $display1
@@ -223,8 +224,8 @@ set $lock swaylock -e -i ~/.config/sway/wp
     bindsym $mod+9 workspace number 9
     bindsym $mod+0 workspace number 10
 
-    bindsym $mod+shift+$right workspace next
-    bindsym $mod+shift+$left workspace prev
+    bindsym $mod+shift+$right move workspace to output right
+    bindsym $mod+shift+$left move workspace to output left
     bindsym $mod+shift+$up workspace next
     bindsym $mod+shift+$down workspace prev
 
@@ -239,6 +240,11 @@ set $lock swaylock -e -i ~/.config/sway/wp
     bindsym $mod+Alt+8 move container to workspace number 8
     bindsym $mod+Alt+9 move container to workspace number 9
     bindsym $mod+Alt+0 move container to workspace number 10
+
+### Focus output ###
+
+    bindsym $mod+bracketleft focus output left
+    bindsym $mod+bracketright focus output right
 
 ### Layout ###
 
