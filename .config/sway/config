@@ -65,7 +65,7 @@ bar {
 ### Touchpad ###
 
     input "1267:12734:MSFT0001:01_04F3:31BE_Touchpad" {
-           dwt enabled
+           dwt disable
            tap enabled
            natural_scroll disabled
            middle_emulation disabled
