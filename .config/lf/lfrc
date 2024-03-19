@@ -5,7 +5,7 @@ set scrolloff 8
 set cursorpreviewfmt "\033[7;2m"
 set icons true
 set sixel true
-set previewer ~/.config/sway/scripts/previewer
+set previewer ~/.local/bin/previewer
 set hidden true
 
 map <enter> shell
