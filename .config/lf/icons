@@ -20,20 +20,20 @@
 # fi      -       # FILE
 
 # file types (with matching order)
-ln             # LINK
-or             # ORPHAN
+ln      🔗       # LINK
+or      🔗       # ORPHAN
 tw      t       # STICKY_OTHER_WRITABLE
-ow             # OTHER_WRITABLE
+ow      📁       # OTHER_WRITABLE
 st      t       # STICKY
-di             # DIR
+di      📂       # DIR
 pi      p       # FIFO
 so      s       # SOCK
 bd      b       # BLK
 cd      c       # CHR
 su      u       # SETUID
 sg      g       # SETGID
-ex             # EXEC
-fi             # FILE
+ex      🚀       # EXEC
+fi      📃       # FILE
 
 # file extensions (vim-devicons)
 *.styl          
@@ -66,20 +66,20 @@ fi             # FILE
 *.coffee        
 *.mustache      
 *.hbs           
-*.conf          
-*.ini           
-*.yml           
-*.yaml          
-*.toml          
-*.bat           
-*.mk            
-*.jpg           
-*.jpeg          
-*.bmp           
-*.png           
-*.webp          
-*.gif           
-*.ico           
+*.conf          🔧
+*.ini           🔧
+*.yml           🔧
+*.yaml          🔧
+*.toml          🔧
+*.bat           🔧
+*.mk            🔧
+*.jpg           🖼️
+*.jpeg          🖼️
+*.bmp           🖼️
+*.png           🖼️
+*.webp          🖼️
+*.gif           🖼️
+*.ico           🖼️
 *.twig          
 *.cpp           
 *.c++           
@@ -167,20 +167,20 @@ fi             # FILE
 *gulpfile.ls            
 *mix.lock               
 *dropbox                
-*.ds_store              
-*.gitconfig             
-*.gitignore             
-*.gitattributes         
+*.ds_store              🔧
+*.gitconfig             🔧
+*.gitignore             🔧
+*.gitattributes         🔧
 *.gitlab-ci.yml         
-*.bashrc                
-*.zshrc                 
-*.zshenv                
-*.zprofile              
+*.bashrc                🔧
+*.zshrc                 🔧
+*.zshenv                🔧
+*.zprofile              🔧
 *.vimrc                 
 *.gvimrc                
 *_vimrc                 
 *_gvimrc                
-*.bashprofile           
+*.bashprofile           🔧
 *favicon.ico            
 *license                
 *node_modules           
@@ -194,8 +194,8 @@ fi             # FILE
 *rakefile               
 *config.ru              
 *gemfile                
-*makefile               
-*cmakelists.txt         
+*makefile               🔧
+*cmakelists.txt         🔧
 *robots.txt             󰚩
 
 # file names (case-sensitive adaptations)
@@ -206,7 +206,7 @@ fi             # FILE
 *Gulpfile.js            
 *Gulpfile.ls            
 *Dropbox                
-*.DS_Store              
+*.DS_Store              🔧
 *LICENSE                
 *React.jsx              
 *Procfile               
@@ -215,8 +215,8 @@ fi             # FILE
 *Docker-compose.yaml    
 *Rakefile               
 *Gemfile                
-*Makefile               
-*CMakeLists.txt         
+*Makefile               🔧
+*CMakeLists.txt         🔧
 
 # file patterns (vim-devicons) (patterns not supported in lf)
 # .*jquery.*\.js$         
@@ -241,121 +241,121 @@ fi             # FILE
 Vagrantfile             
 
 # archives or compressed (extensions from dircolors defaults)
-*.tar   
-*.tgz   
-*.arc   
-*.arj   
-*.taz   
-*.lha   
-*.lz4   
-*.lzh   
-*.lzma  
-*.tlz   
-*.txz   
-*.tzo   
-*.t7z   
-*.zip   
-*.z     
-*.dz    
-*.gz    
-*.lrz   
-*.lz    
-*.lzo   
-*.xz    
-*.zst   
-*.tzst  
-*.bz2   
-*.bz    
-*.tbz   
-*.tbz2  
-*.tz    
-*.deb   
-*.rpm   
-*.jar   
-*.war   
-*.ear   
-*.sar   
-*.rar   
-*.alz   
-*.ace   
-*.zoo   
-*.cpio  
-*.7z    
-*.rz    
-*.cab   
-*.wim   
-*.swm   
-*.dwm   
-*.esd   
+*.tar   🗃️
+*.tgz   🗃️
+*.arc   🗃️
+*.arj   🗃️
+*.taz   🗃️
+*.lha   🗃️
+*.lz4   🗃️
+*.lzh   🗃️
+*.lzma  🗃️
+*.tlz   🗃️
+*.txz   🗃️
+*.tzo   🗃️
+*.t7z   🗃️
+*.zip   🗃️
+*.z     🗃️
+*.dz    🗃️
+*.gz    🗃️
+*.lrz   🗃️
+*.lz    🗃️
+*.lzo   🗃️
+*.xz    🗃️
+*.zst   🗃️
+*.tzst  🗃️
+*.bz2   🗃️
+*.bz    🗃️
+*.tbz   🗃️
+*.tbz2  🗃️
+*.tz    🗃️
+*.deb   🗃️
+*.rpm   🗃️
+*.jar   🗃️
+*.war   🗃️
+*.ear   🗃️
+*.sar   🗃️
+*.rar   🗃️
+*.alz   🗃️
+*.ace   🗃️
+*.zoo   🗃️
+*.cpio  🗃️
+*.7z    🗃️
+*.rz    🗃️
+*.cab   🗃️
+*.wim   🗃️
+*.swm   🗃️
+*.dwm   🗃️
+*.esd   🗃️
 
 # image formats (extensions from dircolors defaults)
-*.jpg   
-*.jpeg  
-*.mjpg  
-*.mjpeg 
-*.gif   
-*.bmp   
-*.pbm   
-*.pgm   
-*.ppm   
-*.tga   
-*.xbm   
-*.xpm   
-*.tif   
-*.tiff  
-*.png   
-*.svg   
-*.svgz  
-*.mng   
-*.pcx   
-*.mov   
-*.mpg   
-*.mpeg  
-*.m2v   
-*.mkv   
-*.webm  
-*.ogm   
-*.mp4   
-*.m4v   
-*.mp4v  
-*.vob   
-*.qt    
-*.nuv   
-*.wmv   
-*.asf   
-*.rm    
-*.rmvb  
-*.flc   
-*.avi   
-*.fli   
-*.flv   
-*.gl    
-*.dl    
-*.xcf   
-*.xwd   
-*.yuv   
-*.cgm   
-*.emf   
-*.ogv   
-*.ogx   
+*.jpg   🖼️
+*.jpeg  🖼️
+*.mjpg  🖼️
+*.mjpeg 🖼️
+*.gif   🖼️
+*.bmp   🖼️
+*.pbm   🖼️
+*.pgm   🖼️
+*.ppm   🖼️
+*.tga   🖼️
+*.xbm   🖼️
+*.xpm   🖼️
+*.tif   🖼️
+*.tiff  🖼️
+*.png   🖼️
+*.svg   🖼️
+*.svgz  🖼️
+*.mng   🖼️
+*.pcx   🖼️
+*.mov   🖼️
+*.mpg   🖼️
+*.mpeg  🖼️
+*.m2v   🖼️
+*.mkv   🖼️
+*.webm  🖼️
+*.ogm   🖼️
+*.mp4   🖼️
+*.m4v   🖼️
+*.mp4v  🖼️
+*.vob   🖼️
+*.qt    🖼️
+*.nuv   🖼️
+*.wmv   🖼️
+*.asf   🖼️
+*.rm    🖼️
+*.rmvb  🖼️
+*.flc   🖼️
+*.avi   🖼️
+*.fli   🖼️
+*.flv   🖼️
+*.gl    🖼️
+*.dl    🖼️
+*.xcf   🖼️
+*.xwd   🖼️
+*.yuv   🖼️
+*.cgm   🖼️
+*.emf   🖼️
+*.ogv   🖼️
+*.ogx   🖼️
 
 # audio formats (extensions from dircolors defaults)
-*.aac   
-*.au    
-*.flac  
-*.m4a   
-*.mid   
-*.midi  
-*.mka   
-*.mp3   
-*.mpc   
-*.ogg   
-*.ra    
-*.wav   
-*.oga   
-*.opus  
-*.spx   
-*.xspf  
+*.aac   🎵
+*.au    🎵
+*.flac  🎵
+*.m4a   🎵
+*.mid   🎵
+*.midi  🎵
+*.mka   🎵
+*.mp3   🎵
+*.mpc   🎵
+*.ogg   🎵
+*.ra    🎵
+*.wav   🎵
+*.oga   🎵
+*.opus  🎵
+*.spx   🎵
+*.xspf  🎵
 
 # other formats
-*.pdf   
+*.pdf   📄
