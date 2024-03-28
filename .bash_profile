@@ -13,7 +13,7 @@ export XDG_SESSION_DESKTOP=sway
 export CARGO_HOME="$XDG_DATA_HOME"/cargo
 export GTK2_RC_FILES="$XDG_CONFIG_HOME"/gtk-2.0/gtkrc
 export NPM_CONFIG_USERCONFIG="$XDG_CONFIG_HOME"/npm/npmrc
-export EDITOR='helix'
+export EDITOR='nvim'
 
 if
 	[ -z "$XDG_RUNTIME_DIR" ]; then
