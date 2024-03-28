@@ -1,10 +1,11 @@
 -- Basic Config --
 -- Vimscript --
 vim.cmd([[
-    let g:netrw_liststyle = 3
     let g:netrw_banner = 0
     let g:netrw_winsize = 50
     let g:netrw_browse_split = 5
+    set listchars=tab:>-,trail:~,extends:>,precedes:<,space:·
+    set list
     map <up> <nop>
     map <down> <nop>
     map <left> <nop>
@@ -34,7 +35,6 @@ vim.o.hidden        =   true
 vim.o.termguicolors =   true
 vim.o.splitright    =   true
 vim.o.splitbellow   =   true
-vim.o.list          =   true
 
 -- numbers --
 vim.o.mat           =   2
@@ -48,7 +48,6 @@ vim.o.scrolloff     =   8
 vim.o.signcolumn    =   "yes"
 vim.o.clipboard     =   "unnamed,unnamedplus"
 vim.o.colorcolumn   =   "80"
-vim.o.listchars     =   "tab:>-,trail:~,extends:>,precedes:<,space:·"
 
 -- Advanced Config --
 -- Plugins -- 
